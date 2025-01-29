@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.todo-button {
+    background-color: black;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 140px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.coldturkey-button {
+    background-color: #f8f8f8;
+    color: black;
+    border: 1px solid black;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.quote {
+    font-style: italic;
+    margin: 10px 0;
+    font-size: 20px;
+    color: #666;
+}
+
+.date-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.date-nav button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    margin: auto;
+}
+
+.time-grid {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.time-grid th, .time-grid td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    min-width: 40px;
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+.time-grid td {
+    font-size: 12px;
+}
+
+.button {
+    width: 30px;
+    height: 30px;
+    background: lightgray;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: #666;
+}
+
+.selected {
+    background-color: #4CAF50;
+}
+
+.event-creation {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#new-event-btn {
+    background-color: #f8f8f8;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black; /* grey border */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+#new-event-form {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#new-event-form input {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#create-event-btn {
+    background-color: #f8f8f8;
+    color: black;
+    padding: 8px 16px;
+    border: 2px solid black;
+    border-color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#events-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.event-button {
+    padding: 12px 24px;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5%;
+    cursor: pointer;
+}
