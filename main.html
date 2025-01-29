@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTRL Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .icons {
+            margin: none;
+            
+        }
+		.todo-button {
+			background-color: black;
+			color: white;
+		}
+		.coldturkey-button {
+			background-color: white;
+			color: black;
+			border-color: black;
+			border-width: 1px;
+		}
+        .quote {
+            font-style: italic;
+            margin: 10px 0;
+        }
+        .date-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .date-nav button {
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(24,1fr);
+            gap: 4px;
+            max-width: 90%;
+            margin: auto;
+        }
+        .button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: lightgray;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+			align-items: center;
+			padding: none;
+        }
+		.button:hover {
+            background: #666;
+        }
+		.selected {
+  			background-color: #4CAF50;
+		}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">CTRL</div>
+        <div class="icons">
+			<button class="todo-button">
+				TO-DO
+			</button>
+			<button class="coldturkey-button">
+				COLD-TURKEY
+			</button>
+		</div>
+    </div>
+    
+    <p class="quote">“You only waste time if you're not intentional about how you spend it.” — Jake Knapp</p>
+    
+    <div class="date-nav">
+        <button>&lt;</button>
+        <span style="margin: 0 15px; font-size: 50px; font-weight: bold;">29 JAN, WED</span>
+        <button>&gt;</button>
+    </div>
+    
+    <div class="grid">
+        <script>
+            for (let i = 0; i < 144; i++) {
+                document.write('<button class="button"></button>');
+            }
+						let isMouseDown = false;
+let isTouchpad = false;
+
+const gridItems = document.querySelectorAll('.button');
+
+function detectTouchpad(event) {
+  if (event.movementX !== 0 || event.movementY !== 0) {
+    isTouchpad = true;
+  } else {
+    isTouchpad = false;
+  }
+}
+
+gridItems.forEach(item => {
+  item.addEventListener('mousedown', () => {
+    isMouseDown = true;
+    item.classList.add('selected');
+  });
+
+  item.addEventListener('mouseover', (event) => {
+    if (isMouseDown && isTouchpad) {
+      item.classList.add('selected');
+    }
+  });
+
+  item.addEventListener('mouseup', () => {
+    isMouseDown = false;
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (!isMouseDown) {
+      item.classList.remove('selected');
+    }
+  });
+
+  item.addEventListener('mousemove', detectTouchpad);
+});
+
+
+        </script>
+    </div>
+</body>
+</html>
