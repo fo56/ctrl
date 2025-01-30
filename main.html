@@ -7,35 +7,43 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">CTRL</div>
+    <header class="header">
+        <div class="logo">CTRL.</div>
         <div class="icons">
             <a href="todo.html"><button class="todo-button">TO-DO</button></a>
             <button class="coldturkey-button">COLD-TURKEY</button>
+            <a href="analysis.html"><button class="analysis-button">ANALYSIS</button></a>
         </div>
-    </div>
+    </header>
     
-    <p class="quote">“You only waste time if you're not intentional about how you spend it.” — Jake Knapp</p>
+    <blockquote class="quote">
+        "What are you busy about?"
+    </blockquote>
 
-    <div class="date-nav">
-        <button id="prev-date">&lt;</button>
-        <span id="current-date" style="margin: 0 15px; font-size: 35px; font-weight: bold;"></span>
-        <button id="next-date">&gt;</button>
-    </div>
+    <nav class="date-nav">
+        <button class="prev-date" id="prev-date" aria-label="Previous Date">&lt;</button>
+        <button class="current-date" id="current-date" aria-label="Current Date"></button>
+        <button class="next-date" id="next-date" aria-label="Next Date">&gt;</button>
+    </nav>
 
-    <div class="grid">
-        <script src="main.js"> </script>
-    </div>
+    <main class="grid">
+        <!-- The grid will be populated dynamically using JavaScript -->
+    </main>
 
-    <div class="event-creation">
+    <section class="event-creation">
         <button id="new-event-btn">New Event</button>
-        <div id="new-event-form" style="display: none;">
-            <input type="text" id="event-name" placeholder="Event Name" />
-            <input type="color" id="event-color" />
-            <button id="create-event-btn">Create Event</button>
-        </div>
+        <form id="new-event-form" style="display: none;">
+            <input type="text" id="event-name" placeholder="Event Name" required />
+            <input type="color" id="event-color" required />
+            <button type="button" id="create-event-btn">Create Event</button>
+        </form>
         <div id="events-container"></div>
-    </div>
+    </section>
+
+    <!-- Event Popup (needed for event selection after drag) -->
+    <div class="event-popup" role="dialog" aria-modal="true"></div>
+
+    <!-- Load JavaScript at the end to ensure the DOM is ready -->
+    <script src="main.js"></script>
 </body>
 </html>
-
